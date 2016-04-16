@@ -1,0 +1,35 @@
+{
+    "results": [
+        {
+            "uniqueCount": 92
+        },
+        {
+            "count": 16443966
+        }
+    ],
+    "metadata": {
+        "contents": [
+            {
+                "function": "uniquecount",
+                "attribute": "userAgentVersion",
+                "simple": true,
+                "openEnded": false
+            },
+            {
+                "function": "count",
+                "attribute": "userAgentName",
+                "simple": true,
+                "openEnded": false
+            }
+        ],
+        "eventType": "PageView",
+        "openEnded": true,
+        "beginTime": "2014-02-07T21:30:32Z",
+        "endTime": "2014-02-14T21:30:32Z",
+        "beginTimeMillis": 1391808632536,
+        "endTimeMillis": 1392413432536,
+        "rawSince": "1 WEEKS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": ""
+    }
+}

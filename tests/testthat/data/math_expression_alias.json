@@ -1,0 +1,51 @@
+{
+    "results": [
+        {
+            "events": [
+                {
+                    "event": {
+                        "app_duration": 0.01016688346862793,
+                        "timestamp": 1460763739189
+                    }
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "eventTypes": [
+            "Transaction"
+        ],
+        "eventType": "Transaction",
+        "openEnded": true,
+        "beginTime": "2016-04-15T22:42:20Z",
+        "endTime": "2016-04-15T23:42:20Z",
+        "beginTimeMillis": 1460760140218,
+        "endTimeMillis": 1460763740218,
+        "rawSince": "1 HOURS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": "",
+        "guid": "9b1af4bc-bed9-9ac1-50ea-49b9fefcabcd",
+        "routerGuid": "a4efc6fe-2c88-cf47-0b8c-a5efea70b692",
+        "messages": [],
+        "contents": [
+            {
+                "function": "events",
+                "limit": 1,
+                "columns": [
+                    {
+                        "relation": "event",
+                        "name": "timestamp"
+                    },
+                    {
+                        "relation": "event",
+                        "name": "app_duration"
+                    }
+                ],
+                "order": {
+                    "column": "timestamp",
+                    "descending": true
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+Package: insights
+Title: Useful functions for querying New Relic Insights
+Version: 0.0.0.9000
+Authors@R: person("Ben", "Poweski", email = "bpoweski@gmail.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+Depends:
+    R (>= 3.2.3)
+License: What license is it under?
+LazyData: true
+Imports:
+    data.table,
+    httr,
+    jsonlite
+Suggests:
+    testthat
+RoxygenNote: 5.0.1

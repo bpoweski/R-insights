@@ -1,0 +1,64 @@
+{
+    "results": [
+        {
+            "count": 6826322
+        }
+    ],
+    "performanceStats": {
+        "fileReadCount": 279,
+        "inspectedCount": 6939012,
+        "omittedCount": 0,
+        "matchCount": 6826322,
+        "processCount": 244,
+        "rawBytes": 642198542,
+        "decompressedBytes": 1451972968,
+        "responseBodyBytes": 36101,
+        "fileProcessingTime": 1926,
+        "mergeTime": 0,
+        "ioTime": 158,
+        "decompressionTime": 925,
+        "wallClockTime": 39,
+        "fullCacheHits": 0,
+        "partialCacheHits": 0,
+        "cacheMisses": 0,
+        "cacheSkipped": 279,
+        "maxInspectedCount": 90615,
+        "minInspectedCount": 23945,
+        "slowLaneFiles": 0,
+        "slowLaneFileProcessingTime": 0,
+        "slowLaneWaitTime": 0,
+        "sumSubqueryWeight": 244.0,
+        "sumFileProcessingTimePercentile": 0.0,
+        "subqueryWeightUpdates": 0,
+        "sumSubqueryWeightStartFileProcessingTime": 187094,
+        "runningQueriesTotal": 244,
+        "ignoredFiles": 0
+    },
+    "metadata": {
+        "eventTypes": [
+            "Transaction"
+        ],
+        "eventType": "Transaction",
+        "openEnded": true,
+        "beginTime": "2016-04-16T17:25:37Z",
+        "endTime": "2016-04-16T18:25:37Z",
+        "beginTimeMillis": 1460827537507,
+        "endTimeMillis": 1460831137507,
+        "rawSince": "1 HOURS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": "",
+        "guid": "7771f464-e8a8-d7bf-b2c7-69ab417143a3",
+        "routerGuid": "c82bc0d2-7c69-0266-d05f-8eb3ece4238a",
+        "messages": [],
+        "contents": [
+            {
+                "function": "alias",
+                "alias": "foo",
+                "contents": {
+                    "function": "count",
+                    "simple": true
+                }
+            }
+        ]
+    }
+}

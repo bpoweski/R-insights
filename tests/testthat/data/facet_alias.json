@@ -1,0 +1,143 @@
+{
+    "facets": [
+        {
+            "name": "Monday",
+            "results": [
+                {
+                    "count": 333
+                },
+                {
+                    "uniqueCount": 15
+                }
+            ]
+        },
+        {
+            "name": "Tuesday",
+            "results": [
+                {
+                    "count": 12
+                },
+                {
+                    "uniqueCount": 4
+                }
+            ]
+        },
+        {
+            "name": "Wednesday",
+            "results": [
+                {
+                    "count": 15
+                },
+                {
+                    "uniqueCount": 5
+                }
+            ]
+        },
+        {
+            "name": "Thursday",
+            "results": [
+                {
+                    "count": 12
+                },
+                {
+                    "uniqueCount": 6
+                }
+            ]
+        },
+        {
+            "name": "Friday",
+            "results": [
+                {
+                    "count": 6
+                },
+                {
+                    "uniqueCount": 4
+                }
+            ]
+        },
+        {
+            "name": "Saturday",
+            "results": [
+                {
+                    "count": 384
+                },
+                {
+                    "uniqueCount": 16
+                }
+            ]
+        },
+        {
+            "name": "Sunday",
+            "results": [
+                {
+                    "count": 387
+                },
+                {
+                    "uniqueCount": 18
+                }
+            ]
+        }
+    ],
+    "totalResult": {
+        "results": [
+            {
+                "count": 9150
+            },
+            {
+                "uniqueCount": 125
+            }
+        ]
+    },
+    "unknownGroup": {
+        "results": [
+            {
+                "count": 8001
+            },
+            {
+                "uniqueCount": 106
+            }
+        ]
+    },
+    "metadata": {
+        "eventTypes": [
+            "Transaction"
+        ],
+        "eventType": "Transaction",
+        "openEnded": true,
+        "beginTime": "2016-04-16T19:28:11Z",
+        "endTime": "2016-04-16T20:28:11Z",
+        "beginTimeMillis": 1460834891492,
+        "endTimeMillis": 1460838491492,
+        "rawSince": "1 HOURS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": "",
+        "guid": "452fdc4a-ac33-95a2-1d4e-7409a4d6d1e8",
+        "routerGuid": "c8de672d-cb39-565e-df57-857f7fbc13bb",
+        "messages": [],
+        "facet": "Weekday of check_in",
+        "offset": 0,
+        "limit": 7,
+        "contents": {
+            "messages": [],
+            "contents": [
+                {
+                    "function": "alias",
+                    "alias": "n",
+                    "contents": {
+                        "function": "count",
+                        "simple": true
+                    }
+                },
+                {
+                    "function": "alias",
+                    "alias": "db",
+                    "contents": {
+                        "function": "uniquecount",
+                        "attribute": "databaseCallCount",
+                        "simple": true
+                    }
+                }
+            ]
+        }
+    }
+}

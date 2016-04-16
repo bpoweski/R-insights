@@ -1,0 +1,88 @@
+{
+    "results": [
+        {
+            "count": 3236408
+        },
+        {
+            "count": 6787668
+        },
+        {
+            "count": 6787668
+        },
+        {
+            "count": 6787668
+        }
+    ],
+    "performanceStats": {
+        "fileReadCount": 275,
+        "inspectedCount": 6851673,
+        "omittedCount": 0,
+        "matchCount": 6787668,
+        "processCount": 244,
+        "rawBytes": 634120077,
+        "decompressedBytes": 1431415486,
+        "responseBodyBytes": 39759,
+        "fileProcessingTime": 2885,
+        "mergeTime": 1,
+        "ioTime": 133,
+        "decompressionTime": 923,
+        "wallClockTime": 44,
+        "fullCacheHits": 0,
+        "partialCacheHits": 0,
+        "cacheMisses": 0,
+        "cacheSkipped": 275,
+        "maxInspectedCount": 125530,
+        "minInspectedCount": 24087,
+        "slowLaneFiles": 0,
+        "slowLaneFileProcessingTime": 0,
+        "slowLaneWaitTime": 0,
+        "sumSubqueryWeight": 244.0,
+        "sumFileProcessingTimePercentile": 0.0,
+        "subqueryWeightUpdates": 0,
+        "sumSubqueryWeightStartFileProcessingTime": 167379,
+        "runningQueriesTotal": 244,
+        "ignoredFiles": 0
+    },
+    "metadata": {
+        "eventTypes": [
+            "Transaction"
+        ],
+        "eventType": "Transaction",
+        "openEnded": true,
+        "beginTime": "2016-04-16T17:56:11Z",
+        "endTime": "2016-04-16T18:56:11Z",
+        "beginTimeMillis": 1460829371051,
+        "endTimeMillis": 1460832971051,
+        "rawSince": "1 HOURS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": "",
+        "guid": "375864c0-1e27-173e-4d0b-d7afad426c98",
+        "routerGuid": "1a4b29e2-0107-ada6-e842-e80b8ad76a21",
+        "messages": [],
+        "contents": [
+            {
+                "function": "count",
+                "attribute": "databaseDuration",
+                "simple": true
+            },
+            {
+                "function": "count",
+                "attribute": "name",
+                "simple": true
+            },
+            {
+                "function": "alias",
+                "alias": "bar",
+                "contents": {
+                    "function": "count",
+                    "attribute": "name",
+                    "simple": true
+                }
+            },
+            {
+                "function": "count",
+                "simple": true
+            }
+        ]
+    }
+}

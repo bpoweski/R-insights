@@ -1,0 +1,105 @@
+{
+    "results": [
+        {
+            "events": [
+                {
+                    "event": {
+                        "duration - databaseDuration": 0.06310376399999999,
+                        "timestamp": 1460758887377
+                    }
+                },
+                {
+                    "event": {
+                        "duration - databaseDuration": null,
+                        "timestamp": 1460758887316
+                    }
+                },
+                {
+                    "event": {
+                        "duration - databaseDuration": 0.002655912,
+                        "timestamp": 1460758887091
+                    }
+                },
+                {
+                    "event": {
+                        "duration - databaseDuration": null,
+                        "timestamp": 1460758887090
+                    }
+                },
+                {
+                    "event": {
+                        "duration - databaseDuration": 0.328945388,
+                        "timestamp": 1460758887049
+                    }
+                },
+                {
+                    "event": {
+                        "duration - databaseDuration": 0.011443518,
+                        "timestamp": 1460758886822
+                    }
+                },
+                {
+                    "event": {
+                        "duration - databaseDuration": null,
+                        "timestamp": 1460758886374
+                    }
+                },
+                {
+                    "event": {
+                        "duration - databaseDuration": 0.024994373321533203,
+                        "timestamp": 1460758886312
+                    }
+                },
+                {
+                    "event": {
+                        "duration - databaseDuration": null,
+                        "timestamp": 1460758886266
+                    }
+                },
+                {
+                    "event": {
+                        "duration - databaseDuration": null,
+                        "timestamp": 1460758886118
+                    }
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "eventTypes": [
+            "Transaction"
+        ],
+        "eventType": "Transaction",
+        "openEnded": true,
+        "beginTime": "2016-04-15T21:21:28Z",
+        "endTime": "2016-04-15T22:21:28Z",
+        "beginTimeMillis": 1460755288822,
+        "endTimeMillis": 1460758888822,
+        "rawSince": "1 HOURS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": "",
+        "guid": "28a7a508-3df7-004e-1b09-5e387e5a2576",
+        "routerGuid": "724e2fa0-7ff2-c480-188f-371327d4451a",
+        "messages": [],
+        "contents": [
+            {
+                "function": "events",
+                "limit": 10,
+                "columns": [
+                    {
+                        "relation": "event",
+                        "name": "timestamp"
+                    },
+                    {
+                        "relation": "event",
+                        "name": "duration - databaseDuration"
+                    }
+                ],
+                "order": {
+                    "column": "timestamp",
+                    "descending": true
+                }
+            }
+        ]
+    }
+}
