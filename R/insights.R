@@ -27,6 +27,7 @@ as.facet.table <- function(x) {
     return(do.call(data.table, x$results))
 }
 
+#' @export
 parse.insights <- function(json) {
     parsed <- fromJSON(json, simplifyDataFrame=FALSE)
 
@@ -74,6 +75,7 @@ parse.insights <- function(json) {
     }
 }
 
+#' @export
 query.insights <- function(nrql, account=Sys.getenv(x="INSIGHTS_ACCOUNT_ID"), key=Sys.getenv(x="INSIGHTS_ACCOUNT_KEY"), parse=TRUE) {
     if (length(account) == 0) {
         stop("No Insights account provided")
