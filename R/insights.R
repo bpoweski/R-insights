@@ -24,7 +24,7 @@ content.name <- function(x) {
 }
 
 as.facet.table <- function(x) {
-    return(do.call(data.table, x$results))
+    return(do.call(data.table, lapply(x$results, simplify2array)))
 }
 
 #' @export

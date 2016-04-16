@@ -46,6 +46,7 @@ test_that("facet names are columns", {
     response <- parse.insights(fixture("facet_alias.json"))
     expect_equal(nrow(response), 7)
     expect_equal(length(response), 3)
+    expect_equal(response$n, c(333, 12, 15, 12, 6, 384, 387))
 })
 
 test_that("facet names are columns and unknown", {
