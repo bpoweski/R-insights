@@ -1,6 +1,6 @@
-library(data.table)
-library(jsonlite)
-library(httr)
+#' @import data.table
+#' @import jsonlite
+#' @import httr
 
 .datatable.aware = TRUE
 

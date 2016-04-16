@@ -2,3 +2,6 @@
 
 export(parse.insights)
 export(query.insights)
+import(data.table)
+import(httr)
+import(jsonlite)
