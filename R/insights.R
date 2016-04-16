@@ -28,7 +28,7 @@ as.facet.table <- function(x) {
 }
 
 #' @export
-parse.insights <- function(json) {
+parse.insights <- function(json, include.unknown = FALSE) {
     parsed <- fromJSON(json, simplifyDataFrame=FALSE)
 
     if (length(parsed$results) == 1 && !is.null(parsed$results[[1]]$events)) {
@@ -42,7 +42,7 @@ parse.insights <- function(json) {
         ## determine facet names
         dt.facet <- data.table(facet=sapply(parsed$facets, function(x) x$name))
 
-        if (!is.null(parsed$unknownGroup)) {
+        if (!is.null(parsed$unknownGroup) && include.unknown) {
             dt.facet <- rbind(dt.facet, data.table(facet=NA))
         }
 
@@ -51,7 +51,7 @@ parse.insights <- function(json) {
         ## facet values
         dt.values <- rbindlist(lapply(parsed$facets, as.facet.table))
 
-        if (!is.null(parsed$unknownGroup)) {
+        if (!is.null(parsed$unknownGroup) && include.unknown) {
             dt.values <- rbind(dt.values, as.facet.table(parsed$unknownGroup))
         }
 
@@ -76,7 +76,7 @@ parse.insights <- function(json) {
 }
 
 #' @export
-query.insights <- function(nrql, account=Sys.getenv(x="INSIGHTS_ACCOUNT_ID"), key=Sys.getenv(x="INSIGHTS_ACCOUNT_KEY"), parse=TRUE) {
+query.insights <- function(nrql, account=Sys.getenv(x="INSIGHTS_ACCOUNT_ID"), key=Sys.getenv(x="INSIGHTS_ACCOUNT_KEY"), parse=TRUE, ...) {
     if (length(account) == 0) {
         stop("No Insights account provided")
     }
@@ -90,7 +90,7 @@ query.insights <- function(nrql, account=Sys.getenv(x="INSIGHTS_ACCOUNT_ID"), ke
     json     <- content(response, as = "text")
 
     if (parse) {
-        return(parse.insights(json))
+        return(parse.insights(json, ...))
     }
 
     return(json)
