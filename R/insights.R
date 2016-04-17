@@ -87,7 +87,7 @@ parse_insights <- function(json, include.unknown = FALSE) {
 #' @param account The New Relic insights account.  Uses the environment variable \code{INSIGHTS_ACCOUNT_ID} as a default.
 #' @param key The New Relic insights key  Uses the environment variable \code{INSIGHTS_ACCOUNT_KEY} as a default.
 #' @param parse If \code{FALSE} returns the unparsed JSON
-#' @param ... Passes remaining arguments to \code{parse_insights}
+#' @param ... Passes remaining arguments to \code{\link{parse_insights}}
 #' @export
 query_insights <- function(nrql, account=Sys.getenv(x="INSIGHTS_ACCOUNT_ID"), key=Sys.getenv(x="INSIGHTS_ACCOUNT_KEY"), parse=TRUE, ...) {
     if (is.character(account) && length(account) == 0) {
