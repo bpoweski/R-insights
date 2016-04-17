@@ -5,7 +5,13 @@
 .datatable.aware = TRUE
 
 event_table <- function(x) {
-    events <- as.data.table(x)
+    row <- x
+
+    if (!is.null(x$event)) {
+        row <- x$event
+    }
+
+    events <- as.data.table(row)
     events[,timestamp := as.POSIXct(timestamp / 1000, origin = "1970-01-01", tz = "UTC")]
 
     return(events)
@@ -48,7 +54,7 @@ parse_insights <- function(json, include.unknown = FALSE) {
 
         result <- parsed$results[[1]]
 
-        return(rbindlist(lapply(result$events, function(x) event_table(x$event)), fill=TRUE))
+        return(rbindlist(lapply(result$events, event_table), fill=TRUE))
 
     } else if (!is.null(parsed$facets)) {
 

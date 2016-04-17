@@ -18,6 +18,13 @@ test_that("events with aliases name columns", {
     expect_equal(nrow(response), 1)
 })
 
+test_that("events without an event object", {
+    response <- parse_insights(fixture("events_without_event.json"))
+    expect_equal(names(response), c("duration - databaseDuration", "timestamp"))
+    expect_equal(response[1]$timestamp, as.POSIXct(1460758887377/1000, origin = "1970-01-01", tz = "UTC"))
+    expect_equal(nrow(response), 1)
+})
+
 context("aggregate functions")
 
 test_that("a list is returned with aggregations as named values", {
