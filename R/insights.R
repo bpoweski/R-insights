@@ -27,6 +27,14 @@ facet_table <- function(x) {
     return(do.call(data.table, lapply(x$results, simplify2array)))
 }
 
+#' Quotes a character vector
+#'
+#' @param x A character vector to quote
+#' @export
+nrql_quote <- function(x) {
+    return(paste("'", x, "'", sep=""))
+}
+
 #' Parses the New Relic Insights and convert to an R data structure.
 #'
 #' @param json A character vector containing the JSON to parse.
