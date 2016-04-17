@@ -2,10 +2,12 @@ Package: insights
 Title: Useful functions for querying New Relic Insights
 Version: 0.0.0.9000
 Authors@R: person("Ben", "Poweski", email = "bpoweski@gmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+URL: https://github.com/bpoweski/R-insights
+BugReports: https://github.com/bpoweski/R-insights/issues
+Description: Functions used to query New Relic Insights and extract data into R data structures.
 Depends:
     R (>= 3.2.3)
-License: What license is it under?
+License: MIT + file LICENSE
 LazyData: true
 Imports:
     data.table,
