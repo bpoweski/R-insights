@@ -60,6 +60,24 @@ Events and facets are returned as `data.table` objects.
 1: 2016-04-19 16:10:23          4.989
 ```
 
+Aliases are used as table columns.  This is particularly useful for generating plots from the data.
+
+```R
+> library(ggplot2)
+> dt <- query_insights("SELECT count(*) as 'pageViews' FROM PageView FACET userAgentOS")
+> dt
+        userAgentOS pageViews
+1:          Windows      6172
+2:              Mac       321
+3:             iPad       158
+4:            Linux       156
+5:           iPhone       124
+6:          Android        60
+7: Google Chrome OS        12
+> ggplot(dt) + geom_bar(aes(x = userAgentOS, y = pageViews), stat = "identity")
+```
+
+
 Timestamps are converted into `POSIXct` objects.
 
 ``` R
