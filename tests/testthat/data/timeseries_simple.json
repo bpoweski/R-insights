@@ -1,0 +1,47 @@
+{
+    "total": {
+        "results": [
+            {
+                "count": 167
+            }
+        ]
+    },
+    "timeSeries": [
+        {
+            "results": [
+                {
+                    "count": 167
+                }
+            ],
+            "beginTimeSeconds": 1461420019,
+            "endTimeSeconds": 1461427219
+        }
+    ],
+    "metadata": {
+        "eventTypes": [
+            "Transaction"
+        ],
+        "eventType": "Transaction",
+        "openEnded": true,
+        "beginTime": "2016-04-23T14:00:19Z",
+        "endTime": "2016-04-23T16:00:19Z",
+        "beginTimeMillis": 1461420019585,
+        "endTimeMillis": 1461427219585,
+        "rawSince": "2 HOURS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": "",
+        "guid": "b1250539-b39b-7a24-7a93-f8884813da8c",
+        "routerGuid": "909caf68-923c-d7d0-36a4-7f69cc6ab98e",
+        "messages": [],
+        "timeSeries": {
+            "messages": [],
+            "contents": [
+                {
+                    "function": "count",
+                    "simple": true
+                }
+            ]
+        },
+        "bucketSizeMillis": 7200000
+    }
+}

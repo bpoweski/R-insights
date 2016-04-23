@@ -1,0 +1,74 @@
+{
+    "total": {
+        "results": [
+            {
+                "count": 166
+            },
+            {
+                "uniqueCount": 2
+            }
+        ]
+    },
+    "timeSeries": [
+        {
+            "results": [
+                {
+                    "count": 83
+                },
+                {
+                    "uniqueCount": 2
+                }
+            ],
+            "beginTimeSeconds": 1461423217,
+            "endTimeSeconds": 1461426817
+        },
+        {
+            "results": [
+                {
+                    "count": 83
+                },
+                {
+                    "uniqueCount": 2
+                }
+            ],
+            "beginTimeSeconds": 1461426817,
+            "endTimeSeconds": 1461430417
+        }
+    ],
+    "metadata": {
+        "eventTypes": [
+            "Transaction"
+        ],
+        "eventType": "Transaction",
+        "openEnded": true,
+        "beginTime": "2016-04-23T14:53:37Z",
+        "endTime": "2016-04-23T16:53:37Z",
+        "beginTimeMillis": 1461423217092,
+        "endTimeMillis": 1461430417092,
+        "rawSince": "2 HOURS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": "",
+        "guid": "9fa42125-0db4-4543-24e2-07ed02994ec7",
+        "routerGuid": "f5140a8b-d4b2-f246-8dc8-f025d02ccfd8",
+        "messages": [],
+        "timeSeries": {
+            "messages": [],
+            "contents": [
+                {
+                    "function": "count",
+                    "simple": true
+                },
+                {
+                    "function": "alias",
+                    "alias": "unique hosts",
+                    "contents": {
+                        "function": "uniquecount",
+                        "attribute": "host",
+                        "simple": true
+                    }
+                }
+            ]
+        },
+        "bucketSizeMillis": 3600000
+    }
+}

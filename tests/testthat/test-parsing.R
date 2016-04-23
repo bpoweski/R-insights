@@ -61,3 +61,25 @@ test_that("facet names are columns and unknown", {
     expect_equal(nrow(response), 8)
     expect_equal(length(response), 3)
 })
+
+context("timeseries")
+
+test_that("time series to table", {
+    dt <- timeseries_table(list(results = list(list(count = 167)), beginTimeSeconds = 1461420019, endTimeSeconds = 1461427219))
+    expect_equal(nrow(dt), 1)
+})
+
+test_that("simple timeseries", {
+    response <- parse_insights(fixture("timeseries_simple.json"))
+    expect_equal(nrow(response), 1)
+    expect_equal(response[, count], 167)
+})
+
+test_that("multiple timeseries values", {
+    response <- parse_insights(fixture("timeseries_multiple_values.json"))
+    expect_equal(nrow(response), 2)
+    expect_equal(names(response), c("begin_time", "end_time", "count", "unique hosts"))
+    expect_equal(response[1:2, count], c(83, 83))
+    expect_equivalent(response[1, begin_time], as.POSIXct(1461423217, origin = "1970-01-01", tz = "UTC"))
+    expect_equivalent(response[2, begin_time], as.POSIXct(1461426817, origin = "1970-01-01", tz = "UTC"))
+})

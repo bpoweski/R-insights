@@ -4,6 +4,10 @@
 
 .datatable.aware = TRUE
 
+from_epoch <- function(x) {
+    return(as.POSIXct(x, origin = "1970-01-01", tz = "UTC"))
+}
+
 event_table <- function(x) {
     row <- x
 
@@ -12,7 +16,7 @@ event_table <- function(x) {
     }
 
     events <- as.data.table(row)
-    events[,timestamp := as.POSIXct(timestamp / 1000, origin = "1970-01-01", tz = "UTC")]
+    events[,timestamp := from_epoch(timestamp / 1000)]
 
     return(events)
 }
@@ -41,6 +45,15 @@ nrql_quote <- function(x) {
     return(paste("'", x, "'", sep=""))
 }
 
+is.timeseries <- function(x) {
+    return(!is.null(x$metadata$timeSeries))
+}
+
+timeseries_table <- function(x) {
+    ret <- data.table(begin_time = from_epoch(x$beginTimeSeconds), end_time = from_epoch(x$endTimeSeconds))
+    return(cbind(ret, do.call(data.table, lapply(x$results, simplify2array))))
+}
+
 #' Parses the New Relic Insights and convert to an R data structure.
 #'
 #' @param json A character vector containing the JSON to parse.
@@ -48,52 +61,70 @@ nrql_quote <- function(x) {
 #' @return data.table generated from \code{json}
 #' @export
 parse_insights <- function(json, include.unknown = FALSE) {
-    parsed <- fromJSON(json, simplifyDataFrame=FALSE)
+    parsed   <- fromJSON(json, simplifyDataFrame = FALSE)
+    metadata <- parsed$metadata
 
-    if (length(parsed$results) == 1 && !is.null(parsed$results[[1]]$events)) {
+    if (!is.null(parsed$error)) {
 
+        stop("received error", parsed$error)
+
+    } else if (length(parsed$results) == 1 && !is.null(parsed$results[[1]]$events)) {
+
+        ## select * from Transaction - style response
         result <- parsed$results[[1]]
 
-        return(rbindlist(lapply(result$events, event_table), fill=TRUE))
+        return(rbindlist(lapply(result$events, event_table), fill = TRUE))
 
     } else if (!is.null(parsed$facets)) {
 
-        ## determine facet names
-        dt.facet <- data.table(facet=sapply(parsed$facets, function(x) x$name))
+        facets <- sapply(parsed$facets, function(x) x$name)
 
-        if (!is.null(parsed$unknownGroup) && include.unknown) {
-            dt.facet <- rbind(dt.facet, data.table(facet=NA))
+        if (is.timeseries(parsed)) {
+
+            ## select f(x) from Transaction facet y timeseries auto - style response
+            return(parsed)
+
+        } else {
+
+            ## select f(x) from Transaction facet y - style response
+            dt.facet <- data.table(facet = facets)
+
+            if (!is.null(parsed$unknownGroup) && include.unknown) {
+                dt.facet <- rbind(dt.facet, data.table(facet = NA))
+            }
+
+            setnames(dt.facet, old = "facet", new = metadata$facet)
+
+            ## facet values
+            dt.values <- rbindlist(lapply(parsed$facets, facet_table))
+
+            if (!is.null(parsed$unknownGroup) && include.unknown) {
+                dt.values <- rbind(dt.values, facet_table(parsed$unknownGroup))
+            }
+
+            setnames(dt.values, old = names(dt.values), new = sapply(metadata$contents$contents, content_name))
+
+            dt <- cbind(dt.facet, dt.values)
+
+            return(dt)
         }
+    } else if (is.timeseries(parsed)) {
 
-        setnames(dt.facet, old="facet", new=parsed$metadata$facet)
+        ret <- rbindlist(lapply(parsed$timeSeries, timeseries_table))
 
-        ## facet values
-        dt.values <- rbindlist(lapply(parsed$facets, facet_table))
-
-        if (!is.null(parsed$unknownGroup) && include.unknown) {
-            dt.values <- rbind(dt.values, facet_table(parsed$unknownGroup))
-        }
-
-        setnames(dt.values, old=names(dt.values), new=sapply(parsed$metadata$contents$contents, content_name))
-
-        dt <- cbind(dt.facet, dt.values)
-
-        return(dt)
-
-    } else if (is.null(parsed$error)) {
-
-        ret        <- do.call(c, parsed$results)
-        names(ret) <- lapply(parsed$metadata$contents, content_name)
+        setnames(ret, old = names(ret)[3:length(ret)], new = sapply(metadata$timeSeries$contents, content_name))
 
         return(ret)
 
     } else {
 
-        stop("received error", parsed$error)
+        ## select count(*) from transaction - style response
+        ret        <- do.call(c, parsed$results)
+        names(ret) <- lapply(parsed$metadata$contents, content_name)
 
+        return(ret)
     }
 }
-
 
 #' Queries New Relic Insights using the character vector nrql.
 #'
@@ -103,7 +134,7 @@ parse_insights <- function(json, include.unknown = FALSE) {
 #' @param parse If \code{FALSE} returns the unparsed JSON
 #' @param ... Passes remaining arguments to \code{\link{parse_insights}}
 #' @export
-query_insights <- function(nrql, account=Sys.getenv(x="INSIGHTS_ACCOUNT_ID"), key=Sys.getenv(x="INSIGHTS_ACCOUNT_KEY"), parse=TRUE, ...) {
+query_insights <- function(nrql, account = Sys.getenv(x = "INSIGHTS_ACCOUNT_ID"), key = Sys.getenv(x = "INSIGHTS_ACCOUNT_KEY"), parse = TRUE, ...) {
     if (is.character(account) && length(account) == 0) {
         stop("No Insights account provided")
     }

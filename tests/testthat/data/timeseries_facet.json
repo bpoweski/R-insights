@@ -1,0 +1,365 @@
+{
+    "facets": [
+        {
+            "name": "Chrome",
+            "total": {
+                "results": [
+                    {
+                        "count": 709
+                    }
+                ]
+            },
+            "timeSeries": [
+                {
+                    "results": [
+                        {
+                            "count": 94
+                        }
+                    ],
+                    "beginTimeSeconds": 1461165563,
+                    "endTimeSeconds": 1461208763
+                },
+                {
+                    "results": [
+                        {
+                            "count": 72
+                        }
+                    ],
+                    "beginTimeSeconds": 1461208763,
+                    "endTimeSeconds": 1461251963
+                },
+                {
+                    "results": [
+                        {
+                            "count": 372
+                        }
+                    ],
+                    "beginTimeSeconds": 1461251963,
+                    "endTimeSeconds": 1461295163
+                },
+                {
+                    "results": [
+                        {
+                            "count": 17
+                        }
+                    ],
+                    "beginTimeSeconds": 1461295163,
+                    "endTimeSeconds": 1461338363
+                },
+                {
+                    "results": [
+                        {
+                            "count": 153
+                        }
+                    ],
+                    "beginTimeSeconds": 1461338363,
+                    "endTimeSeconds": 1461381563
+                },
+                {
+                    "results": [
+                        {
+                            "count": 1
+                        }
+                    ],
+                    "beginTimeSeconds": 1461381563,
+                    "endTimeSeconds": 1461424763
+                }
+            ]
+        },
+        {
+            "name": "Safari",
+            "total": {
+                "results": [
+                    {
+                        "count": 7
+                    }
+                ]
+            },
+            "timeSeries": [
+                {
+                    "results": [
+                        {
+                            "count": 6
+                        }
+                    ],
+                    "beginTimeSeconds": 1461165563,
+                    "endTimeSeconds": 1461208763
+                },
+                {
+                    "results": [
+                        {
+                            "count": 0
+                        }
+                    ],
+                    "beginTimeSeconds": 1461208763,
+                    "endTimeSeconds": 1461251963
+                },
+                {
+                    "results": [
+                        {
+                            "count": 1
+                        }
+                    ],
+                    "beginTimeSeconds": 1461251963,
+                    "endTimeSeconds": 1461295163
+                },
+                {
+                    "results": [
+                        {
+                            "count": 0
+                        }
+                    ],
+                    "beginTimeSeconds": 1461295163,
+                    "endTimeSeconds": 1461338363
+                },
+                {
+                    "results": [
+                        {
+                            "count": 0
+                        }
+                    ],
+                    "beginTimeSeconds": 1461338363,
+                    "endTimeSeconds": 1461381563
+                },
+                {
+                    "results": [
+                        {
+                            "count": 0
+                        }
+                    ],
+                    "beginTimeSeconds": 1461381563,
+                    "endTimeSeconds": 1461424763
+                }
+            ]
+        },
+        {
+            "name": "Firefox",
+            "total": {
+                "results": [
+                    {
+                        "count": 1
+                    }
+                ]
+            },
+            "timeSeries": [
+                {
+                    "results": [
+                        {
+                            "count": 0
+                        }
+                    ],
+                    "beginTimeSeconds": 1461165563,
+                    "endTimeSeconds": 1461208763
+                },
+                {
+                    "results": [
+                        {
+                            "count": 0
+                        }
+                    ],
+                    "beginTimeSeconds": 1461208763,
+                    "endTimeSeconds": 1461251963
+                },
+                {
+                    "results": [
+                        {
+                            "count": 0
+                        }
+                    ],
+                    "beginTimeSeconds": 1461251963,
+                    "endTimeSeconds": 1461295163
+                },
+                {
+                    "results": [
+                        {
+                            "count": 0
+                        }
+                    ],
+                    "beginTimeSeconds": 1461295163,
+                    "endTimeSeconds": 1461338363
+                },
+                {
+                    "results": [
+                        {
+                            "count": 1
+                        }
+                    ],
+                    "beginTimeSeconds": 1461338363,
+                    "endTimeSeconds": 1461381563
+                },
+                {
+                    "results": [
+                        {
+                            "count": 0
+                        }
+                    ],
+                    "beginTimeSeconds": 1461381563,
+                    "endTimeSeconds": 1461424763
+                }
+            ]
+        }
+    ],
+    "totalResult": {
+        "total": {
+            "results": [
+                {
+                    "count": 717
+                }
+            ]
+        },
+        "timeSeries": [
+            {
+                "results": [
+                    {
+                        "count": 100
+                    }
+                ],
+                "beginTimeSeconds": 1461165563,
+                "endTimeSeconds": 1461208763
+            },
+            {
+                "results": [
+                    {
+                        "count": 72
+                    }
+                ],
+                "beginTimeSeconds": 1461208763,
+                "endTimeSeconds": 1461251963
+            },
+            {
+                "results": [
+                    {
+                        "count": 373
+                    }
+                ],
+                "beginTimeSeconds": 1461251963,
+                "endTimeSeconds": 1461295163
+            },
+            {
+                "results": [
+                    {
+                        "count": 17
+                    }
+                ],
+                "beginTimeSeconds": 1461295163,
+                "endTimeSeconds": 1461338363
+            },
+            {
+                "results": [
+                    {
+                        "count": 154
+                    }
+                ],
+                "beginTimeSeconds": 1461338363,
+                "endTimeSeconds": 1461381563
+            },
+            {
+                "results": [
+                    {
+                        "count": 1
+                    }
+                ],
+                "beginTimeSeconds": 1461381563,
+                "endTimeSeconds": 1461424763
+            }
+        ]
+    },
+    "unknownGroup": {
+        "total": {
+            "results": [
+                {
+                    "count": 0
+                }
+            ]
+        },
+        "timeSeries": [
+            {
+                "results": [
+                    {
+                        "count": 0
+                    }
+                ],
+                "beginTimeSeconds": 1461165563,
+                "endTimeSeconds": 1461208763
+            },
+            {
+                "results": [
+                    {
+                        "count": 0
+                    }
+                ],
+                "beginTimeSeconds": 1461208763,
+                "endTimeSeconds": 1461251963
+            },
+            {
+                "results": [
+                    {
+                        "count": 0
+                    }
+                ],
+                "beginTimeSeconds": 1461251963,
+                "endTimeSeconds": 1461295163
+            },
+            {
+                "results": [
+                    {
+                        "count": 0
+                    }
+                ],
+                "beginTimeSeconds": 1461295163,
+                "endTimeSeconds": 1461338363
+            },
+            {
+                "results": [
+                    {
+                        "count": 0
+                    }
+                ],
+                "beginTimeSeconds": 1461338363,
+                "endTimeSeconds": 1461381563
+            },
+            {
+                "results": [
+                    {
+                        "count": 0
+                    }
+                ],
+                "beginTimeSeconds": 1461381563,
+                "endTimeSeconds": 1461424763
+            }
+        ]
+    },
+    "metadata": {
+        "eventTypes": [
+            "PageView"
+        ],
+        "eventType": "PageView",
+        "openEnded": true,
+        "beginTime": "2016-04-20T15:19:23Z",
+        "endTime": "2016-04-23T15:19:23Z",
+        "beginTimeMillis": 1461165563622,
+        "endTimeMillis": 1461424763622,
+        "rawSince": "3 DAYS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": "",
+        "guid": "70395287-3f8d-2402-3d9a-491a28f17be6",
+        "routerGuid": "adfc496c-28c5-2e59-56c0-f9661b01d95c",
+        "messages": [],
+        "facet": "userAgentName",
+        "offset": 0,
+        "limit": 10,
+        "contents": {
+            "messages": [],
+            "timeSeries": {
+                "messages": [],
+                "contents": [
+                    {
+                        "function": "count",
+                        "simple": true
+                    }
+                ]
+            },
+            "bucketSizeMillis": 43200000
+        }
+    }
+}
