@@ -47,6 +47,12 @@ test_that("reused functions named different where possible", {
     expect_equal(response$count, 6787668)
 })
 
+test_that("an empty data.table is returned when there are no matched facets", {
+    response <- parse_insights(fixture("facet_no_match.json"))
+    expect_equal(length(response), 0)
+    expect_equal(nrow(response), 0)
+})
+
 context("facets")
 
 test_that("facet names are columns", {

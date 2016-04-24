@@ -1,0 +1,46 @@
+{
+    "facets": [],
+    "totalResult": {
+        "results": [
+            {
+                "count": 80
+            }
+        ]
+    },
+    "unknownGroup": {
+        "results": [
+            {
+                "count": 80
+            }
+        ]
+    },
+    "metadata": {
+        "eventTypes": [
+            "Transaction"
+        ],
+        "eventType": "Transaction",
+        "openEnded": true,
+        "beginTime": "2016-04-24T14:40:32Z",
+        "endTime": "2016-04-24T15:40:32Z",
+        "beginTimeMillis": 1461508832474,
+        "endTimeMillis": 1461512432474,
+        "rawSince": "1 HOURS AGO",
+        "rawUntil": "`now`",
+        "rawCompareWith": "",
+        "guid": "31f90bf7-b43e-a64c-d7a9-51b43f649c7b",
+        "routerGuid": "e39e7456-59af-cd83-e49c-201cecffc670",
+        "messages": [],
+        "facet": "foo",
+        "offset": 0,
+        "limit": 10,
+        "contents": {
+            "messages": [],
+            "contents": [
+                {
+                    "function": "count",
+                    "simple": true
+                }
+            ]
+        }
+    }
+}

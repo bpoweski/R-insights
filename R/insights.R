@@ -79,7 +79,11 @@ parse_insights <- function(json, include.unknown = FALSE) {
 
         facets <- sapply(parsed$facets, function(x) x$name)
 
-        if (is.timeseries(parsed)) {
+        if (length(facets) == 0) {
+
+            return(data.table())
+
+        } else if (is.timeseries(parsed)) {
 
             ## select f(x) from Transaction facet y timeseries auto - style response
             return(parsed)
